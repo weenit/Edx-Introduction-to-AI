@@ -48,6 +48,7 @@ features = data
 del features['User_ID']
 del features['Gender']
 y = features.Calories
+del features['Calories']
 
 # Split training and testing data
 X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.3)
@@ -64,6 +65,8 @@ plt.scatter(y_test, predictions)
 plt.xlabel('True Values')
 plt.ylabel('Predictions')
 plt.show()
+
+print ('Score:', model.score(X_test, y_test))
 
 
 
